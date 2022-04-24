@@ -36,7 +36,7 @@ function validate () {
         }
     }
     if (total_check1 == 5) {
-        alert('selected 5 or more')
+        alert('Congrats. 5 Tasks have been Successfully Completed')
     }
 }
 
