@@ -1,2 +1,5 @@
-# to-do-app_casestudy1
+# FSD course - Case Study 1
+
+## To-Do List app
  
+> Aravind
