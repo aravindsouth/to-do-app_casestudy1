@@ -21,3 +21,23 @@ xhttp.onreadystatechange = function () {
 };
 xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
 xhttp.send();
+
+// handling checkbox validation
+
+var form1 = document.getElementById('para1');
+var cbox = form1.getElementsByClassName('cenabled');
+
+
+function validate () {
+    let total_check1 = 0;
+    for (let i = 0; i < cbox.length; i++) {
+        if(cbox[i].checked) {
+            total_check1 += 1;
+        }
+    }
+    if (total_check1 == 5) {
+        alert('selected 5 or more')
+    }
+}
+
+form1.addEventListener('click', validate);
