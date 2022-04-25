@@ -26,18 +26,44 @@ xhttp.send();
 
 var form1 = document.getElementById('para1');
 var cbox = form1.getElementsByClassName('cenabled');
+var total_check1 = 0;
 
+
+// function validate () {
+//     let total_check1 = 0;
+//     for (let i = 0; i < cbox.length; i++) {
+//         if(cbox[i].checked) {
+//             total_check1 += 1;
+//         }
+//     }
+//     if (total_check1 == 5) {
+//         alert('Congrats. 5 Tasks have been Successfully Completed')
+//     }
+// }
+
+// creatin Promise
 
 function validate () {
-    let total_check1 = 0;
+    // let total_check1 = 0;
+    return new Promise((resolve, reject) => {
+    total_check1 = 0;
     for (let i = 0; i < cbox.length; i++) {
         if(cbox[i].checked) {
             total_check1 += 1;
         }
     }
     if (total_check1 == 5) {
-        alert('Congrats. 5 Tasks have been Successfully Completed')
+        resolve('Congrats. 5 Tasks have been Successfully Completed')
     }
+    else {
+        reject('error-1');
+    }
+})}
+
+function event_promise() {
+    validate().then((response) => {
+        alert(response);
+    })
 }
 
-form1.addEventListener('click', validate);
+form1.addEventListener('click', event_promise);
